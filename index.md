@@ -68,14 +68,27 @@ Model RDM from features reduced to
   - Intermediate duration videos (10-20s) with elements of visual surprise and scene cuts
 - Collection of more large scale video EEG datasets
 
+# References
+[1] Cichy et al., 2016. Comparison of deep neural networks to spatio-temporal cortical dynamics of human visual object recognition reveals hierarchical correspondence. Scientific reports.
+
+[2] Sartzetaki et al., 2025. One hundred neural networks and brains watching videos: Lessons from alignment. In The Thirteenth International Conference on Learning Representations.
+
+[3] Lahner et al., 2024. Modeling short visual events through the BOLD moments video fMRI dataset and metadata. Nature communications.
+
+[4] Kriegeskorte et al., 2008. Representational similarity analysis connecting the branches of systems neuroscience. Frontiers in Systems Neuroscience.
+
+[5] Oyarzo et al., 2025. Adaptive recruitment of cortex-wide recurrence for visual object recognition. bioRxiv.
+
+[6] Hebart et al., 2018. The representational dynamics of task and object processing in humans. elife.
+
 # BibTeX
 ```
 @inproceedings{
-  sartzetaki2025one,
-  title={One Hundred Neural Networks and Brains Watching Videos: Lessons from Alignment},
-  author={Christina Sartzetaki and Gemma Roig and Cees G. M. Snoek and Iris Groen},
-  booktitle={The Thirteenth International Conference on Learning Representations},
-  year={2025},
-  url={https://openreview.net/forum?id=LM4PYXBId5}
+  sartzetaki2026the,
+  title={The Human Brain as a Dynamic Mixture of Expert Models in Video Understanding},
+  author={Christina Sartzetaki and Anne W. Zonneveld and Pablo Oyarzo and Alessandro Thomas Gifford and Radoslaw Martin Cichy and Pascal Mettes and Iris Groen},
+  booktitle={The Fourteenth International Conference on Learning Representations},
+  year={2026},
+  url={https://openreview.net/forum?id=bSsNSfyj8m}
 }
 ```
