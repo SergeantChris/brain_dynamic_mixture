@@ -1,44 +1,72 @@
 ---
 layout: default
 ---
+![brain_gif](./ezgif-272e082859d1b6d9.gif)
 
-What can we learn from comparing video models to human brains, arguably the
-most efficient and effective video processing systems in existence?
+# TL;DR
 
-We take a step towards answering this question by performing the **first large-scale
-benchmarking of deep video models on representational alignment to the human
-brain**, using publicly available models and a recently released video brain imaging
-(fMRI) dataset.
+So far, there are studies of either fine-grained dynamic responses to **static image stimuli** [1] or **slow fMRI** responses to video, often employing large-scale DNN alignment comparisons [2].
 
-![RSA](./RSA.png)
+Question:
+How does DNN alignment to **fine-grained dynamic neural representations** evolve beyond static stimuli **during video watching**?
 
-## 👉 We disentangle 4 factors of variation:
+## Human brain during video watching
 
-# 1. Temporal modeling − 2. Classification task
+![brain_graphic](./brain_graphic.png)
 
-![ImagevsVideo](./IvsV.png)
+Answer:
+The brain does not resemble a single DNN type across time.
+It switches between semantic tasks and temporal integration, analogous to a dynamic mixture of expert models.
+The brain returns to mid-level features after high-level semantics, challenging the conventional temporal processing hierarchy.
 
-Temporal modeling found important for alignment to early brain regions, while action recognition classification task to late regions
+# Aligning 100+ DNNs and EEG responses to video with CT-RSA
 
-# 3. Architecture
+![method](./method.png)
 
-![CNNvsTransformer](./CvsT.png)
+First benchmarking to video EEG
+• new EEG Moments Dataset, same videos as Bold Moments Dataset [3]
+• test set of 102 videos w. 24 repeats
+• deep sampling in 6 subjects
+• 35 posterior, 54 frontal electrodes
 
-CNNs and Transformers are mostly equivalent in maximum score, but display interesting layer-wise differences
+100+ image & video models
+• 44 image object (ImageNet-1k)
+• 10 image action (Kinetics-400)
+• 49 video action (Kinetics-400)
+👉 isolated effects of task and temporal integration
 
-# 4. Training dataset
+CT-RSA: Cross-Temporal extension of RSA [4]
+max, argmax (RSA between all EEG timepoints 
+and all model timepoints + layers)
+• EEG RDM is subject average.
+Model RDM from features reduced to
+100 dimensions (SRP+PCA).
 
-![KineticsvsSthsth](./KvsS.png)
+# The brain switches between semantic tasks and temporal integration
 
-There is a distinct effect of training biases on alignment to functionally selective regions
+![main_result](./main_result.png)
 
-## 👉 We rank the models in terms of brain alignment:
+# Better alignment of state-space models and self-supervised pretraining
 
-![Rank](./rank.png)
+![secondary_result](./secondary_result.png)
 
-## 👉 And we relate their brain alignment to their computational complexity:
+# What does this mean for human vision?
+- Our results challenge the idea of a strict temporal hierarchy as seen in image perception [1], uncovering an additional phase of mid-level action feature processing until the end of the video
+- This phase occurs after high-level action feature processing seen in frontal electrodes, revealing possible role of feedback [5] 
 
-![Flops](./flops.png)
+# What does this mean for Video AI?
+- A single DNN would be best aligned with the brain if trained with a sufficiently general objective to develop experts for different semantic tasks and modes of temporal integration
+- Enabling dynamic switching between these experts may yield human-like capabilities such as efficiency
+
+# What's next?
+- Model-based EEG-fMRI fusion [6] to see which brain regions are involved when, connecting to findings in fMRI studies [2]
+  - Is the mid-level temporal integration of stage III in EVC?
+  - Does action recognition involve prefrontal regions?
+- Neuro-inspired video architecture via implementations of dynamic mixture of experts, feedback for dynamic routing
+- Extending the representational alignment benchmarking to:
+  - More recurrent architectures (SSMs, LRUs, RNNs)
+  - Intermediate duration videos (10-20s) with elements of visual surprise and scene cuts
+- Collection of more large scale video EEG datasets
 
 # BibTeX
 ```
