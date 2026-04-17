@@ -1,8 +1,6 @@
 ---
 layout: default
 ---
-![brain_gif](./ezgif-272e082859d1b6d9.gif)
-
 # TL;DR
 
 So far, there are studies of either fine-grained dynamic responses to **static image stimuli** [1] or **slow fMRI** responses to video, often employing large-scale DNN alignment comparisons [2].
