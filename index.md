@@ -5,16 +5,14 @@ layout: default
 
 So far, there are studies of either fine-grained dynamic responses to **static image stimuli** [1] or **slow fMRI** responses to video, often employing large-scale DNN alignment comparisons [2].
 
-Question:
-
+**Question:**\
 How does DNN alignment to **fine-grained dynamic neural representations** evolve beyond static stimuli **during video watching**?
 
 ## Human brain during video watching
 
 ![brain_graphic](./brain_graphic.png)
 
-Answer:
-
+**Answer:**\
 The brain does not resemble a single DNN type across time.
 It switches between semantic tasks and temporal integration, analogous to a **dynamic mixture of expert models**.
 The brain returns to mid-level features after high-level semantics, **challenging the conventional temporal processing hierarchy**.
@@ -23,20 +21,20 @@ The brain returns to mid-level features after high-level semantics, **challengin
 
 ![method](./method.png)
 
-**First benchmarking to video EEG**
+### First benchmarking to video EEG
 - **new EEG Moments Dataset**, same videos as Bold Moments Dataset [3]
 - test set of 102 videos w. 24 repeats
 - deep sampling in 6 subjects
 - 35 posterior, 54 frontal electrodes
 
-**100+ image & video models**
+### 100+ image & video models
 - 44 image object (ImageNet-1k)
 - 10 image action (Kinetics-400)
 - 49 video action (Kinetics-400)
 
   👉 **isolated effects** of task and temporal integration
 
-**CT-RSA: Cross-Temporal extension of RSA [4]**
+### CT-RSA: Cross-Temporal extension of RSA [4]
 - *max, argmax* (RSA between **all EEG timepoints and all model timepoints + layers**)
 - EEG RDM is subject average. Model RDM from features reduced to 100 dimensions (SRP+PCA).
 
